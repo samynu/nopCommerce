@@ -104,6 +104,12 @@ set @resources='
   <LocaleResource Name="Admin.Configuration.Settings.Tax.DefaultTaxCategory.Hint">
     <Value>Select default tax category for products.</Value>
   </LocaleResource>
+  <LocaleResource Name="Plugins.ExchangeRate.EcbExchange.SetCurrencyToEURO">
+    <Value></Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.ExchangeRate.EcbExchange.Error">
+    <Value>You can use ECB (European central bank) exchange rate provider only when the primary exchange rate currency is supported by ECB</Value>
+  </LocaleResource>
 </Language>
 '
 
