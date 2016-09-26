@@ -104,6 +104,12 @@ set @resources='
   <LocaleResource Name="Admin.Configuration.Settings.Tax.DefaultTaxCategory.Hint">
     <Value>Select default tax category for products.</Value>
   </LocaleResource>
+  <LocaleResource Name="Plugins.Shipping.CanadaPost.Fields.ContractId">
+    <Value>Contract ID</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Shipping.CanadaPost.Fields.ContractId.Hint">
+    <Value>Specify contract identifier.</Value>
+  </LocaleResource>
 </Language>
 '
 
