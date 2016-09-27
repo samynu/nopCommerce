@@ -696,9 +696,6 @@
   <LocaleResource Name="ActivityLog.AddNewNews">
     <Value>Added a new news (ID = {0})</Value>
   </LocaleResource>
-  <LocaleResource Name="ActivityLog.AddNewPlugin">
-    <Value>Added a new plugin (FriendlyName: '{0}')</Value>
-  </LocaleResource>  
   <LocaleResource Name="ActivityLog.AddNewProduct">
     <Value>Added a new product ('{0}')</Value>
   </LocaleResource>
@@ -712,7 +709,7 @@
     <Value>Added a new specification attribute ('{0}')</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.AddNewStateProvince">
-    <Value>Added a new state province (ID = {0})</Value>
+    <Value>Added a new state or province (ID = {0})</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.AddNewStore">
     <Value>Added a new store (ID = {0})</Value>
@@ -798,17 +795,14 @@
   <LocaleResource Name="ActivityLog.DeleteOrder">
     <Value>Deleted an order (ID = {0})</Value>
   </LocaleResource>
-  <LocaleResource Name="ActivityLog.DeletePlugin">
-   <Value>Deleted a plugin (FriendlyName: '{0}')</Value>
-  </LocaleResource>  
   <LocaleResource Name="ActivityLog.DeleteProduct">
     <Value>Deleted a product ('{0}')</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.DeleteProductAttribute">
     <Value>Deleted a product attribute ('{0}')</Value>
   </LocaleResource>
-  <LocaleResource Name="ActivityLog.DeleteProductRevie">
-   <Value>Deleted a product revie (ID = {0})</Value>
+  <LocaleResource Name="ActivityLog.DeleteProductReview">
+   <Value>Deleted a product review (ID = {0})</Value>
   </LocaleResource>  
   <LocaleResource Name="ActivityLog.DeleteReturnRequest">
     <Value>Deleted a return request (ID = {0})</Value>
@@ -820,7 +814,7 @@
     <Value>Deleted a specification attribute ('{0}')</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.DeleteStateProvince">
-   <Value>Deleted a state province (ID = {0})</Value>
+   <Value>Deleted a state or province (ID = {0})</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.DeleteStore">
    <Value>Deleted a store (ID = {0})</Value>
@@ -915,8 +909,8 @@
   <LocaleResource Name="ActivityLog.EditProductAttribute">
     <Value>Edited a product attribute ('{0}')</Value>
   </LocaleResource>
-  <LocaleResource Name="ActivityLog.EditProductRevie">
-   <Value>Edited a product revie (ID = {0})</Value>
+  <LocaleResource Name="ActivityLog.EditProductReview">
+   <Value>Edited a product review (ID = {0})</Value>
   </LocaleResource>  
   <LocaleResource Name="ActivityLog.EditReturnRequest">
     <Value>Edited a return request (ID = {0})</Value>
@@ -928,7 +922,7 @@
     <Value>Edited a specification attribute ('{0}')</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.EditStateProvince">
-   <Value>Edited a state province (ID = {0})</Value>
+   <Value>Edited a state or province (ID = {0})</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.EditStore">
    <Value>Edited a store (ID = {0})</Value>
@@ -959,6 +953,12 @@
   </LocaleResource>
   <LocaleResource Name="ActivityLog.Impersonation.Finished.Customer">
     <Value>Impersonation by store owner was finished (Email: {0}, ID = {1})</Value>
+  </LocaleResource>
+  <LocaleResource Name="ActivityLog.InstallNewPlugin">
+    <Value>Installed a new plugin (FriendlyName: '{0}')</Value>
+  </LocaleResource>
+  <LocaleResource Name="ActivityLog.UninstallPlugin">
+    <Value>Uninstalled a plugin (FriendlyName: '{0}')</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.PublicStore.AddBlogComment">
     <Value>Added a blog comment</Value>

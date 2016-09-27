@@ -306,7 +306,7 @@ namespace Nop.Admin.Controllers
                 pluginDescriptor.Instance().Install();
 
                 //activity log
-                _customerActivityService.InsertActivity("AddNewPlugin", _localizationService.GetResource("ActivityLog.AddNewPlugin"), pluginDescriptor.FriendlyName);
+                _customerActivityService.InsertActivity("InstallNewPlugin", _localizationService.GetResource("ActivityLog.InstallNewPlugin"), pluginDescriptor.FriendlyName);
 
                 SuccessNotification(_localizationService.GetResource("Admin.Configuration.Plugins.Installed"));
 
@@ -349,7 +349,7 @@ namespace Nop.Admin.Controllers
                 pluginDescriptor.Instance().Uninstall();
 
                 //activity log
-                _customerActivityService.InsertActivity("DeletePlugin", _localizationService.GetResource("ActivityLog.DeletePlugin"), pluginDescriptor.FriendlyName);
+                _customerActivityService.InsertActivity("UninstallPlugin", _localizationService.GetResource("ActivityLog.UninstallPlugin"), pluginDescriptor.FriendlyName);
 
                 SuccessNotification(_localizationService.GetResource("Admin.Configuration.Plugins.Uninstalled"));
 

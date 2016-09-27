@@ -134,8 +134,8 @@ set @resources='
   <LocaleResource Name="ActivityLog.AddNewNews">
     <Value>Added a new news (ID = {0})</Value>
   </LocaleResource>
-  <LocaleResource Name="ActivityLog.AddNewPlugin">
-    <Value>Added a new plugin (FriendlyName: '{0}')</Value>
+  <LocaleResource Name="ActivityLog.InstallNewPlugin">
+    <Value>Installed a new plugin (FriendlyName: ''{0}'')</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.AddNewStateProvince">
     <Value>Added a new state province (ID = {0})</Value>
@@ -191,14 +191,14 @@ set @resources='
   <LocaleResource Name="ActivityLog.DeleteNews">
     <Value>Deleted a news (ID = {0})</Value>
   </LocaleResource>
-  <LocaleResource Name="ActivityLog.DeletePlugin">
-    <Value>Deleted a plugin (FriendlyName: '{0}')</Value>
+  <LocaleResource Name="ActivityLog.UninstallPlugin">
+    <Value>Uninstalled a plugin (FriendlyName: ''{0}'')</Value>
   </LocaleResource>
-  <LocaleResource Name="ActivityLog.DeleteProductRevie">
+  <LocaleResource Name="ActivityLog.DeleteProductReview">
     <Value>Deleted a product revie (ID = {0})</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.DeleteStateProvince">
-    <Value>Deleted a state province (ID = {0})</Value>
+    <Value>Deleted a state or province (ID = {0})</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.DeleteStore">
     <Value>Deleted a store (ID = {0})</Value>
@@ -252,13 +252,13 @@ set @resources='
     <Value>Edited a news (ID = {0})</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.EditPlugin">
-    <Value>Edited a plugin (FriendlyName: '{0}')</Value>
+    <Value>Edited a plugin (FriendlyName: ''{0}'')</Value>
   </LocaleResource>
-  <LocaleResource Name="ActivityLog.EditProductRevie">
+  <LocaleResource Name="ActivityLog.EditProductReview">
     <Value>Edited a product revie (ID = {0})</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.EditStateProvince">
-    <Value>Edited a state province (ID = {0})</Value>
+    <Value>Edited a state or province (ID = {0})</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.EditStore">
     <Value>Edited a store (ID = {0})</Value>
@@ -458,10 +458,10 @@ END
 GO
 
 --new activity types
-IF NOT EXISTS (SELECT 1 FROM [ActivityLogType] WHERE [SystemKeyword] = N'AddNewPlugin')
+IF NOT EXISTS (SELECT 1 FROM [ActivityLogType] WHERE [SystemKeyword] = N'InstallNewPlugin')
 BEGIN
 	INSERT [ActivityLogType] ([SystemKeyword], [Name], [Enabled])
-	VALUES (N'AddNewPlugin', N'Add a new plugin', N'true')
+	VALUES (N'InstallNewPlugin', N'Install a new plugin', N'true')
 END
 GO
 
@@ -469,7 +469,7 @@ GO
 IF NOT EXISTS (SELECT 1 FROM [ActivityLogType] WHERE [SystemKeyword] = N'AddNewStateProvince')
 BEGIN
 	INSERT [ActivityLogType] ([SystemKeyword], [Name], [Enabled])
-	VALUES (N'AddNewStateProvince', N'Add a new state province', N'true')
+	VALUES (N'AddNewStateProvince', N'Add a new state or province', N'true')
 END
 GO
 
@@ -509,7 +509,7 @@ GO
 IF NOT EXISTS (SELECT 1 FROM [ActivityLogType] WHERE [SystemKeyword] = N'DeleteAffiliate')
 BEGIN
 	INSERT [ActivityLogType] ([SystemKeyword], [Name], [Enabled])
-	VALUES (N'DeleteAffiliate', N'Delete a affiliate', N'true')
+	VALUES (N'DeleteAffiliate', N'Delete an affiliate', N'true')
 END
 GO
 
@@ -610,18 +610,18 @@ END
 GO
 
 --new activity types
-IF NOT EXISTS (SELECT 1 FROM [ActivityLogType] WHERE [SystemKeyword] = N'DeletePlugin')
+IF NOT EXISTS (SELECT 1 FROM [ActivityLogType] WHERE [SystemKeyword] = N'UninstallPlugin')
 BEGIN
 	INSERT [ActivityLogType] ([SystemKeyword], [Name], [Enabled])
-	VALUES (N'DeletePlugin', N'Delete a plugin', N'true')
+	VALUES (N'UninstallPlugin', N'Uninstall a plugin', N'true')
 END
 GO
 
 --new activity types
-IF NOT EXISTS (SELECT 1 FROM [ActivityLogType] WHERE [SystemKeyword] = N'DeleteProductRevie')
+IF NOT EXISTS (SELECT 1 FROM [ActivityLogType] WHERE [SystemKeyword] = N'DeleteProductReview')
 BEGIN
 	INSERT [ActivityLogType] ([SystemKeyword], [Name], [Enabled])
-	VALUES (N'DeleteProductRevie', N'Delete a product revie', N'true')
+	VALUES (N'DeleteProductReview', N'Delete a product review', N'true')
 END
 GO
 
@@ -629,7 +629,7 @@ GO
 IF NOT EXISTS (SELECT 1 FROM [ActivityLogType] WHERE [SystemKeyword] = N'DeleteStateProvince')
 BEGIN
 	INSERT [ActivityLogType] ([SystemKeyword], [Name], [Enabled])
-	VALUES (N'DeleteStateProvince', N'Delete a state province', N'true')
+	VALUES (N'DeleteStateProvince', N'Delete a state or province', N'true')
 END
 GO
 
@@ -778,10 +778,10 @@ END
 GO
 
 --new activity types
-IF NOT EXISTS (SELECT 1 FROM [ActivityLogType] WHERE [SystemKeyword] = N'EditProductRevie')
+IF NOT EXISTS (SELECT 1 FROM [ActivityLogType] WHERE [SystemKeyword] = N'EditProductReview')
 BEGIN
 	INSERT [ActivityLogType] ([SystemKeyword], [Name], [Enabled])
-	VALUES (N'EditProductRevie', N'Edit a product revie', N'true')
+	VALUES (N'EditProductReview', N'Edit a product review', N'true')
 END
 GO
 
@@ -789,7 +789,7 @@ GO
 IF NOT EXISTS (SELECT 1 FROM [ActivityLogType] WHERE [SystemKeyword] = N'EditStateProvince')
 BEGIN
 	INSERT [ActivityLogType] ([SystemKeyword], [Name], [Enabled])
-	VALUES (N'EditStateProvince', N'Edit a state province', N'true')
+	VALUES (N'EditStateProvince', N'Edit a state or province', N'true')
 END
 GO
 

@@ -170,7 +170,7 @@ namespace Nop.Admin.Controllers
                 _productService.UpdateProduct(productReview.Product);
 
                 //activity log
-                _customerActivityService.InsertActivity("EditProductRevie", _localizationService.GetResource("ActivityLog.EditProductRevie"), productReview.Id);
+                _customerActivityService.InsertActivity("EditProductReview", _localizationService.GetResource("ActivityLog.EditProductReview"), productReview.Id);
 
                 //update product totals
                 _productService.UpdateProductReviewTotals(productReview.Product);
@@ -201,7 +201,7 @@ namespace Nop.Admin.Controllers
             _productService.DeleteProductReview(productReview);
 
             //activity log
-            _customerActivityService.InsertActivity("DeleteProductRevie", _localizationService.GetResource("ActivityLog.DeleteProductRevie"), productReview.Id);
+            _customerActivityService.InsertActivity("DeleteProductReview", _localizationService.GetResource("ActivityLog.DeleteProductReview"), productReview.Id);
 
             //update product totals
             _productService.UpdateProductReviewTotals(product);

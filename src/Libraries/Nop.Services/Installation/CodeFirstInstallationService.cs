@@ -10941,12 +10941,6 @@ namespace Nop.Services.Installation
                 },
                 new ActivityLogType
                 {
-                    SystemKeyword = "AddNewPlugin",
-                    Enabled = true,
-                    Name = "Add a new plugin"
-                },
-                new ActivityLogType
-                {
                     SystemKeyword = "AddNewProduct",
                     Enabled = true,
                     Name = "Add a new product"
@@ -10973,7 +10967,7 @@ namespace Nop.Services.Installation
                 {
                     SystemKeyword = "AddNewStateProvince",
                     Enabled = true,
-                    Name = "Add a new state province"
+                    Name = "Add a new state or province"
                 },
                 new ActivityLogType
                 {
@@ -11021,7 +11015,7 @@ namespace Nop.Services.Installation
                 {
                     SystemKeyword = "DeleteAffiliate",
                     Enabled = true,
-                    Name = "Delete a affiliate"
+                    Name = "Delete an affiliate"
                 },
                 new ActivityLogType
                 {
@@ -11145,12 +11139,6 @@ namespace Nop.Services.Installation
                 },
                 new ActivityLogType
                 {
-                    SystemKeyword = "DeletePlugin",
-                    Enabled = true,
-                    Name = "Delete a plugin"
-                },
-                new ActivityLogType
-                {
                     SystemKeyword = "DeleteProduct",
                     Enabled = true,
                     Name = "Delete a product"
@@ -11163,9 +11151,9 @@ namespace Nop.Services.Installation
                 },
                 new ActivityLogType
                 {
-                    SystemKeyword = "DeleteProductRevie",
+                    SystemKeyword = "DeleteProductReview",
                     Enabled = true,
-                    Name = "Delete a product revie"
+                    Name = "Delete a product review"
                 },
                 new ActivityLogType
                 {
@@ -11189,7 +11177,7 @@ namespace Nop.Services.Installation
                 {
                     SystemKeyword = "DeleteStateProvince",
                     Enabled = true,
-                    Name = "Delete a state province"
+                    Name = "Delete a state or province"
                 },
                 new ActivityLogType
                 {
@@ -11379,9 +11367,9 @@ namespace Nop.Services.Installation
                 },
                 new ActivityLogType
                 {
-                    SystemKeyword = "EditProductRevie",
+                    SystemKeyword = "EditProductReview",
                     Enabled = true,
-                    Name = "Edit a product revie"
+                    Name = "Edit a product review"
                 },
                 new ActivityLogType
                 {
@@ -11405,7 +11393,7 @@ namespace Nop.Services.Installation
                 {
                     SystemKeyword = "EditStateProvince",
                     Enabled = true,
-                    Name = "Edit a state province"
+                    Name = "Edit a state or province"
                 },
                 new ActivityLogType
                 {
@@ -11460,6 +11448,18 @@ namespace Nop.Services.Installation
                     SystemKeyword = "Impersonation.Finished",
                     Enabled = true,
                     Name = "Customer impersonation session. Finished"
+                },
+                new ActivityLogType
+                {
+                    SystemKeyword = "InstallNewPlugin",
+                    Enabled = true,
+                    Name = "Install a new plugin"
+                },
+                new ActivityLogType
+                {
+                    SystemKeyword = "UninstallPlugin",
+                    Enabled = true,
+                    Name = "Uninstall a plugin"
                 },
                 //public store activities
                 new ActivityLogType
