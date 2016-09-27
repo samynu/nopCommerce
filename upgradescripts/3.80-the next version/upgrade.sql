@@ -104,6 +104,15 @@ set @resources='
   <LocaleResource Name="Admin.Configuration.Settings.Tax.DefaultTaxCategory.Hint">
     <Value>Select default tax category for products.</Value>
   </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.Catalog.ProductReviewPossibleOnlyAfterPurchasing">
+    <Value>Product review possible only after purchasing product</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.Catalog.ProductReviewPossibleOnlyAfterPurchasing.Hint">
+    <Value>Check if product can be reviewed only by customer who have already ordered it.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Reviews.ProductReviewPossibleOnlyAfterPurchasing">
+    <Value>Product can be reviewed only after purchasing it</Value>
+  </LocaleResource>
 </Language>
 '
 
@@ -191,5 +200,13 @@ IF NOT EXISTS (SELECT 1 FROM [Setting] WHERE [name] = N'taxsettings.defaulttaxca
 BEGIN
 	INSERT [Setting] ([Name], [Value], [StoreId])
 	VALUES (N'taxsettings.defaulttaxcategoryid', N'0', 0)
+END
+GO
+
+--new setting
+IF NOT EXISTS (SELECT 1 FROM [Setting] WHERE [name] = N'catalogsettings.productreviewpossibleonlyafterpurchasing')
+BEGIN
+	INSERT [Setting] ([Name], [Value], [StoreId])
+	VALUES (N'catalogsettings.productreviewpossibleonlyafterpurchasing', N'False', 0)
 END
 GO
