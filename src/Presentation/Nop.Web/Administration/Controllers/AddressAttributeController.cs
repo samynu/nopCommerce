@@ -308,6 +308,10 @@ namespace Nop.Admin.Controllers
                 };
 
                 _addressAttributeService.InsertAddressAttributeValue(cav);
+
+                //activity log
+                _customerActivityService.InsertActivity("AddNewAddressAttributeValue", _localizationService.GetResource("ActivityLog.AddNewAddressAttributeValue"), cav.Id);
+                
                 UpdateValueLocales(cav, model);
 
                 ViewBag.RefreshPage = true;
@@ -368,6 +372,9 @@ namespace Nop.Admin.Controllers
 
                 UpdateValueLocales(cav, model);
 
+                //activity log
+                _customerActivityService.InsertActivity("EditAddressAttributeValue", _localizationService.GetResource("ActivityLog.EditAddressAttributeValue"), cav.Id);
+                
                 ViewBag.RefreshPage = true;
                 ViewBag.btnId = btnId;
                 ViewBag.formId = formId;
@@ -389,7 +396,10 @@ namespace Nop.Admin.Controllers
             if (cav == null)
                 throw new ArgumentException("No address attribute value found with the specified id");
             _addressAttributeService.DeleteAddressAttributeValue(cav);
-
+            
+            //activity log
+            _customerActivityService.InsertActivity("DeleteAddressAttributeValue", _localizationService.GetResource("ActivityLog.DeleteAddressAttributeValue"), cav.Id);
+            
             return new NullJsonResult();
         }
 

@@ -373,6 +373,10 @@ namespace Nop.Admin.Controllers
 
             var blogPost = comment.BlogPost;
             _blogService.DeleteBlogComment(comment);
+
+            //activity log
+            _customerActivityService.InsertActivity("DeleteBlogPostComment", _localizationService.GetResource("ActivityLog.DeleteBlogPostComment"), blogPost.Id);
+            
             //update totals
             blogPost.CommentCount = blogPost.BlogComments.Count;
             _blogService.UpdateBlogPost(blogPost);
@@ -392,6 +396,11 @@ namespace Nop.Admin.Controllers
                 var blogPosts = _blogService.GetBlogPostsByIds(comments.Select(p => p.BlogPostId).Distinct().ToArray());
 
                 _blogService.DeleteBlogComments(comments);
+                //activity log
+                foreach (var blogComment in comments)
+                {
+                    _customerActivityService.InsertActivity("DeleteBlogPostComment", _localizationService.GetResource("ActivityLog.DeleteBlogPostComment"), blogComment.Id);
+                }
                 //update totals
                 foreach (var blogPost in blogPosts)
                 {

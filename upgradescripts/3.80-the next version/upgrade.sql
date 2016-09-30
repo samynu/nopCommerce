@@ -98,6 +98,9 @@ set @resources='
   <LocaleResource Name="ActivityLog.AddNewAddressAttribute">
     <Value>Added a new address attribute (ID = {0})</Value>
   </LocaleResource>
+  <LocaleResource Name="ActivityLog.AddNewAddressAttributeValue">
+    <Value>Added a new address attribute value (ID = {0})</Value>
+  </LocaleResource>    
   <LocaleResource Name="ActivityLog.AddNewAffiliate">
     <Value>Added a new affiliate (ID = {0})</Value>
   </LocaleResource>
@@ -152,12 +155,18 @@ set @resources='
   <LocaleResource Name="ActivityLog.DeleteAddressAttribute">
     <Value>Deleted an address attribute (ID = {0})</Value>
   </LocaleResource>
+  <LocaleResource Name="ActivityLog.DeleteAddressAttributeValue">
+    <Value>Deleted an address attribute value (ID = {0})</Value>
+  </LocaleResource>  
   <LocaleResource Name="ActivityLog.DeleteAffiliate">
     <Value>Deleted an affiliate (ID = {0})</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.DeleteBlogPost">
     <Value>Deleted a blog post (ID = {0})</Value>
   </LocaleResource>
+  <LocaleResource Name="ActivityLog.DeleteBlogPostComment">
+    <Value>Deleted a blog post comment (ID = {0})</Value>
+  </LocaleResource>  
   <LocaleResource Name="ActivityLog.DeleteCampaign">
     <Value>Deleted a campaign (ID = {0})</Value>
   </LocaleResource>
@@ -191,6 +200,9 @@ set @resources='
   <LocaleResource Name="ActivityLog.DeleteNews">
     <Value>Deleted a news (ID = {0})</Value>
   </LocaleResource>
+  <LocaleResource Name="ActivityLog.DeleteNewsComment">
+    <Value>Deleted a news comment (ID = {0})</Value>
+  </LocaleResource>  
   <LocaleResource Name="ActivityLog.UninstallPlugin">
     <Value>Uninstalled a plugin (FriendlyName: ''{0}'')</Value>
   </LocaleResource>
@@ -212,6 +224,9 @@ set @resources='
   <LocaleResource Name="ActivityLog.EditAddressAttribute">
     <Value>Edited an address attribute (ID = {0})</Value>
   </LocaleResource>
+  <LocaleResource Name="ActivityLog.EditAddressAttributeValue">
+    <Value>Edited an address attribute value (ID = {0})</Value>
+  </LocaleResource>  
   <LocaleResource Name="ActivityLog.EditAffiliate">
     <Value>Edited an affiliate (ID = {0})</Value>
   </LocaleResource>
@@ -822,5 +837,46 @@ IF NOT EXISTS (SELECT 1 FROM [ActivityLogType] WHERE [SystemKeyword] = N'EditWar
 BEGIN
 	INSERT [ActivityLogType] ([SystemKeyword], [Name], [Enabled])
 	VALUES (N'EditWarehouse', N'Edit a warehouse', N'true')
+END
+GO
+
+
+--new activity types
+IF NOT EXISTS (SELECT 1 FROM [ActivityLogType] WHERE [SystemKeyword] = N'DeleteBlogPostComment')
+BEGIN
+	INSERT [ActivityLogType] ([SystemKeyword], [Name], [Enabled])
+	VALUES (N'DeleteBlogPostComment', N'Delete a blog post comment', N'true')
+END
+GO
+
+--new activity types
+IF NOT EXISTS (SELECT 1 FROM [ActivityLogType] WHERE [SystemKeyword] = N'DeleteNewsComment')
+BEGIN
+	INSERT [ActivityLogType] ([SystemKeyword], [Name], [Enabled])
+	VALUES (N'DeleteNewsComment', N'Delete a news comment', N'true')
+END
+GO
+
+--new activity types
+IF NOT EXISTS (SELECT 1 FROM [ActivityLogType] WHERE [SystemKeyword] = N'AddNewAddressAttributeValue')
+BEGIN
+	INSERT [ActivityLogType] ([SystemKeyword], [Name], [Enabled])
+	VALUES (N'AddNewAddressAttributeValue', N'Add a new address attribute value', N'true')
+END
+GO
+
+--new activity types
+IF NOT EXISTS (SELECT 1 FROM [ActivityLogType] WHERE [SystemKeyword] = N'EditAddressAttributeValue')
+BEGIN
+	INSERT [ActivityLogType] ([SystemKeyword], [Name], [Enabled])
+	VALUES (N'EditAddressAttributeValue', N'Edit an address attribute value', N'true')
+END
+GO
+
+--new activity types
+IF NOT EXISTS (SELECT 1 FROM [ActivityLogType] WHERE [SystemKeyword] = N'DeleteAddressAttributeValue')
+BEGIN
+	INSERT [ActivityLogType] ([SystemKeyword], [Name], [Enabled])
+	VALUES (N'DeleteAddressAttributeValue', N'Delete an address attribute value', N'true')
 END
 GO

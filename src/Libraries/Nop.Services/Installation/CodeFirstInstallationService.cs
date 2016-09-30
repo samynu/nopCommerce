@@ -10827,6 +10827,12 @@ namespace Nop.Services.Installation
                 },
                 new ActivityLogType
                 {
+                    SystemKeyword = "AddNewAddressAttributeValue",
+                    Enabled = true,
+                    Name = "Add a new address attribute value"
+                },
+                new ActivityLogType
+                {
                     SystemKeyword = "AddNewAffiliate",
                     Enabled = true,
                     Name = "Add a new affiliate"
@@ -11013,6 +11019,12 @@ namespace Nop.Services.Installation
                 },
                 new ActivityLogType
                 {
+                    SystemKeyword = "DeleteAddressAttributeValue",
+                    Enabled = true,
+                    Name = "Delete an address attribute value"
+                },
+                new ActivityLogType
+                {
                     SystemKeyword = "DeleteAffiliate",
                     Enabled = true,
                     Name = "Delete an affiliate"
@@ -11022,6 +11034,12 @@ namespace Nop.Services.Installation
                     SystemKeyword = "DeleteBlogPost",
                     Enabled = true,
                     Name = "Delete a blog post"
+                },
+                new ActivityLogType
+                {
+                    SystemKeyword = "DeleteBlogPostComment",
+                    Enabled = true,
+                    Name = "Delete a blog post comment"
                 },
                 new ActivityLogType
                 {
@@ -11131,6 +11149,12 @@ namespace Nop.Services.Installation
                     Enabled = true,
                     Name = "Delete a news"
                 },
+                 new ActivityLogType
+                {
+                    SystemKeyword = "DeleteNewsComment",
+                    Enabled = true,
+                    Name = "Delete a news comment"
+                },
                 new ActivityLogType
                 {
                     SystemKeyword = "DeleteOrder",
@@ -11220,6 +11244,12 @@ namespace Nop.Services.Installation
                     SystemKeyword = "EditAddressAttribute",
                     Enabled = true,
                     Name = "Edit an address attribute"
+                },
+                 new ActivityLogType
+                {
+                    SystemKeyword = "EditAddressAttributeValue",
+                    Enabled = true,
+                    Name = "Edit an address attribute value"
                 },
                 new ActivityLogType
                 {

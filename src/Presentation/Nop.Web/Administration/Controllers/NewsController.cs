@@ -386,6 +386,10 @@ namespace Nop.Admin.Controllers
 
             var newsItem = comment.NewsItem;
             _newsService.DeleteNewsComment(comment);
+
+            //activity log
+            _customerActivityService.InsertActivity("DeleteNewsComment", _localizationService.GetResource("ActivityLog.DeleteNewsComment"), id);
+
             //update totals
             newsItem.CommentCount = newsItem.NewsComments.Count;
             _newsService.UpdateNews(newsItem);
@@ -405,6 +409,13 @@ namespace Nop.Admin.Controllers
                 var news = _newsService.GetNewsByIds(comments.Select(p => p.NewsItemId).Distinct().ToArray());
 
                 _newsService.DeleteNewsComments(comments);
+
+                //activity log
+                foreach (var newsComment in comments)
+                {
+                    _customerActivityService.InsertActivity("DeleteNewsComment", _localizationService.GetResource("ActivityLog.DeleteNewsComment"), newsComment.Id);
+                }
+
                 //update totals
                 foreach (var newsItem in news)
                 {

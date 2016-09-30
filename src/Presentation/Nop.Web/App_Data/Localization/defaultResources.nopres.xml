@@ -639,6 +639,9 @@
   <LocaleResource Name="ActivityLog.AddNewAddressAttribute">
     <Value>Added a new address attribute (ID = {0})</Value>
   </LocaleResource>
+  <LocaleResource Name="ActivityLog.AddNewAddressAttributeValue">
+    <Value>Added a new address attribute value (ID = {0})</Value>
+  </LocaleResource>
   <LocaleResource Name="ActivityLog.AddNewAffiliate">
     <Value>Added a new affiliate (ID = {0})</Value>
   </LocaleResource>
@@ -732,11 +735,17 @@
   <LocaleResource Name="ActivityLog.DeleteAddressAttribute">
     <Value>Deleted an address attribute (ID = {0})</Value>
   </LocaleResource>
+  <LocaleResource Name="ActivityLog.DeleteAddressAttributeValue">
+    <Value>Deleted an address attribute value (ID = {0})</Value>
+  </LocaleResource>
   <LocaleResource Name="ActivityLog.DeleteAffiliate">
     <Value>Deleted an affiliate (ID = {0})</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.DeleteBlogPost">
     <Value>Deleted a blog post (ID = {0})</Value>
+  </LocaleResource>
+  <LocaleResource Name="ActivityLog.DeleteBlogPostComment">
+    <Value>Deleted a blog post comment (ID = {0})</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.DeleteCampaign">
     <Value>Deleted a campaign (ID = {0})</Value>
@@ -791,6 +800,9 @@
   </LocaleResource>
   <LocaleResource Name="ActivityLog.DeleteNews">
    <Value>Deleted a news (ID = {0})</Value>
+  </LocaleResource>
+  <LocaleResource Name="ActivityLog.DeleteNewsComment">
+    <Value>Deleted a news comment (ID = {0})</Value>
   </LocaleResource>  
   <LocaleResource Name="ActivityLog.DeleteOrder">
     <Value>Deleted an order (ID = {0})</Value>
@@ -837,6 +849,9 @@
   <LocaleResource Name="ActivityLog.EditAddressAttribute">
    <Value>Edited an address attribute (ID = {0})</Value>
   </LocaleResource>
+  <LocaleResource Name="ActivityLog.EditAddressAttributeValue">
+    <Value>Edited an address attribute value (ID = {0})</Value>
+  </LocaleResource>  
   <LocaleResource Name="ActivityLog.EditAffiliate">
    <Value>Edited an affiliate (ID = {0})</Value>
   </LocaleResource>
